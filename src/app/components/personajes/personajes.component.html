@@ -1,0 +1,21 @@
+<div *ngIf="personajeSeleccionado">
+  <h2>Detalle del personaje</h2>
+
+  <h3>{{ personajeSeleccionado.name }}</h3>
+  <img [src]="personajeSeleccionado.image" width="200" />
+
+  <p><strong>Estado:</strong> {{ personajeSeleccionado.status }}</p>
+  <p><strong>Especie:</strong> {{ personajeSeleccionado.species }}</p>
+  <p><strong>Género:</strong> {{ personajeSeleccionado.gender }}</p>
+
+  <hr />
+</div>
+
+<h2>Personajes</h2>
+
+<div *ngFor="let personaje of personajes" (click)="verDetalle(personaje.id)">
+  <h3>{{ personaje.name }}</h3>
+  <img [src]="personaje.image" width="150" />
+  <p>{{ personaje.species }}</p>
+  <hr />
+</div>
